@@ -1,0 +1,71 @@
+.navBar {
+  left: 0;
+  height: 100%;
+  display: flex;
+  width: 6.8rem;
+  color: white;
+  position: fixed;
+  font-weight: bold;
+  font-size: 0.7rem;
+  background: black;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navLinks {
+  display: flex;
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.navLinks > * {
+  margin-bottom: 0.5rem;
+}
+
+#navDash {
+  border-bottom: 1px dashed white;
+  width: 100%;
+  margin-left: 0.6rem;
+}
+
+.navBar #logo {
+  padding: 0;
+  height: 5.5rem;
+  display: flex;
+  flex-direction: column;
+  background: none;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+}
+
+.navBar .dashboardLinks {
+  background: none;
+}
+
+.dashboardLinks div {
+  display: flex;
+  align-items: center;
+}
+
+#inactiveLink {
+  opacity: 0.3;
+}
+
+#inactiveLink:hover {
+  opacity: 1;
+}
+
+.bottomNav {
+  border-top: 1px dashed white;
+  padding-top: 1.5rem;
+}
+
+@media screen and (max-width: 480px) {
+  .navBar {
+    display: none;
+  }
+}

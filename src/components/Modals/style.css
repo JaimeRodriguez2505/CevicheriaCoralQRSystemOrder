@@ -1,0 +1,190 @@
+.demoMenuModal,
+.tableModal {
+  top:50%;
+  left:50%;
+  width: 25rem;
+  display: flex;
+  height: 25rem;
+  position:fixed;
+  border-radius: 1.6rem;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translate(-50%,-50%);
+  background: rgb(238, 238, 238);
+}
+
+.demoModal_wide,
+.tableModal_wide {
+  top:50%;
+  left:50%;
+  width: 80%;
+  height: 25rem;
+  display: flex;
+  position:fixed;
+  align-items: center;
+  border-radius: 1.6rem;
+  flex-direction: column;
+  justify-content: space-between;
+  transform: translate(-50%,-50%);
+  background: rgb(238, 238, 238);
+}
+
+
+.demoModal_wide > .demoModal_content,
+.tableModal_wide > div:nth-of-type(2),
+.demoMenuModal > div:first-of-type,
+.tableModal > div:first-of-type {
+  height: 84%;
+  width: 100%;
+  display: flex;
+  background: white;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border-top-left-radius: 1.6rem;
+  border-top-right-radius: 1.6rem;
+}
+
+.demoMenuModal > div:first-of-type {
+  padding: 3rem;
+}
+
+.demoMenuModal p {
+  font-size: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.demoModal_wide > .demoModal_content {
+  width: 100%;
+  padding: 4rem;
+  padding-top: 1.6rem;
+  padding-bottom: 1.7rem;
+  justify-content: space-between;
+}
+
+.demoModal_wide .btn {
+  width: 6.5rem;
+  margin-bottom: 1rem;
+}
+
+.demoModal_header {
+  width: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.demoMenuModal h3 {
+  font-size: 0.8rem;
+}
+
+.demoModal_content > h3:last-of-type,
+.demoModal_header > h3:first-of-type,
+.demoModal_header > h3:last-of-type {
+  width: 100%;
+  font-size: 0.8rem;
+  margin-top: 0.3rem;
+}
+
+.demoModal_content > div:nth-child(3) {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.demoModal_infoColumn {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.demoModal_infoColumn h4 {
+  width: 100%;
+  font-size: 0.7rem;
+  text-align: center;
+  margin-bottom: 0.7rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px dashed black;
+}
+
+.demoModal_infoColumn > div:first-of-type {
+  width: 100%;
+}
+
+.demoModal_infoColumn > div:first-of-type > div {
+  font-size: 0.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.tableModal_wide > div:first-of-type {
+  height: 10%;
+  width: 100%;
+  background: white;
+  border-top-left-radius: 1.6rem;
+  border-top-right-radius: 1.6rem;
+}
+
+.tableModal_wide > div:nth-of-type(2) {
+  height: 70%;
+  display: grid;
+  padding: 0 2rem;
+  overflow-y: scroll;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.tableModal_wide > div:nth-of-type(2) > div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-direction: column;
+}
+
+.demoMenuModal h3,
+.tableModal_wide h4,
+.tableModal h4 {
+  margin-bottom: 1.5rem;
+}
+
+.tableModal_wide > div:last-of-type,
+.demoMenuModal > div:last-of-type,
+.tableModal > div:last-of-type {
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mobileModal {
+  display: none;
+}
+
+@media screen and (max-width: 480px) {
+  .demoModal_wide > .demoModal_content {
+    padding: 1rem;
+    padding-top: 4rem;
+    justify-content: center;
+  }
+
+  .demoModal_content h3 {
+    display: none;
+  }
+
+  .demoModal_infoColumn {
+    display: none;
+  }
+
+  #mobileModal {
+    display: block;
+  }
+
+  #mobileModal p {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
