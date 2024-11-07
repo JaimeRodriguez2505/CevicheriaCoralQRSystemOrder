@@ -31,10 +31,10 @@ const OrdersManagerView = ({
   return (
     <div className={state.sideboardOpen ? "viewSmall" : "viewFull"}>
       <div className="dashboardHeader">
-        <h1>ORDERS</h1>
+        <h1>ÓRDENES</h1>
         <div className="orderToggler">
-          <h4 onClick={() => toggleOrders(true)} id={!viewCurrent && "unselected"}>CURRENT</h4>
-          <h4 onClick={() => toggleOrders(false)} id={viewCurrent && "unselected"}>PAST</h4>
+          <h4 onClick={() => toggleOrders(true)} id={!viewCurrent && "unselected"}>ACTUALES</h4>
+          <h4 onClick={() => toggleOrders(false)} id={viewCurrent && "unselected"}>PASADAS</h4>
         </div>
       </div>
       <div className="ordersCardsView">
@@ -56,7 +56,7 @@ const OrdersManagerView = ({
               ))}
             </>
           :  
-            <h3>NO CURRENT ORDERS</h3>
+            <h3>NO HAY ÓRDENES ACTUALES</h3>
         )}
         {!viewCurrent && (
           pastOrdersValid ? 
@@ -75,7 +75,7 @@ const OrdersManagerView = ({
               ))}
             </>
           :
-            <h3>NO PAST ORDERS</h3>
+            <h3>NO HAY ÓRDENES PASADAS</h3>
         )}
       </div>
       <div className={selectedOrder.index === null ? "hidden" : "fixedSideboard"}>

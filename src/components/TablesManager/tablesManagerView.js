@@ -30,14 +30,14 @@ const TablesManagerView = ({
 }) => (
   <div className="viewSmall">
     <div className="dashboardHeader">
-      <h1>TABLES</h1>
+      <h1>MESAS</h1>
     </div>
     <div className="tableCardsView">
       
       {error && <h4>{error.msg}</h4>}
 
       {tablesIsEmpty ?
-        <h3>NO TABLES REGISTERED</h3>
+        <h3>NO HAY MESAS REGISTRADAS</h3>
         :
         <>
           {tables.map((el, idx) => (

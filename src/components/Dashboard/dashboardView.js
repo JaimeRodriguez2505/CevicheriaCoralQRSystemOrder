@@ -42,8 +42,8 @@ const DashboardView = ({
           menu={menu} 
           updateMenuDb={updateMenuDb} 
         />
-        }
-      {loading && <div>Loading ...</div>}
+      }
+      {loading && <div>Cargando...</div>}
       <Modal show={showModal}>
         {isMobile ? 
           <MobileModal />

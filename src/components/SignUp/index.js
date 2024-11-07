@@ -13,10 +13,8 @@ const SignUpPage = () => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      setShowModal(true);
-     };
-  });
+    
+  }, []);
 
   return (
     <div className="signupView">
@@ -26,18 +24,18 @@ const SignUpPage = () => {
         </Link>
       </div>
       <div className="mobileHeader">
-        <h3>SIGN UP</h3>
+        <h3>REGISTRARSE</h3>
       </div>
 
       <div className="dashboardHeader">
-        <h1>SIGN UP</h1>
+        <h1>REGISTRARSE</h1>
       </div>
       <SignUpForm />
       <Modal show={showModal}>
         <MobileModal />
       </Modal>
     </div>
-  )
+  );
 };
 
 const INITIAL_STATE = {
@@ -55,39 +53,35 @@ class SignUpFormBase extends Component {
     this.state = { ...INITIAL_STATE };
   }
 
-  onSubmit = event => {
+  onSubmit = (event) => {
     const { username, email, passwordOne, businessName } = this.state;
     this.props.firebase
       .doCreateUserWithEmailAndPassword(email, passwordOne)
-      .then(authUser => {
-        this.props.firebase.user(authUser.user.uid)
-        .set({ username, email, tables: 0, businessName })
-        .then(() => {
-          this.props.firebase.userMenu(authUser.user.uid)
-          .set({ drinks: 0, dishes: 0 })
+      .then((authUser) => {
+        this.props.firebase
+          .user(authUser.user.uid)
+          .set({ username, email, tables: 0, businessName })
           .then(() => {
-            this.props.firebase.userOrders(authUser.user.uid)
-            .set({ current: 0, past: 0 })
-            this.props.history.push(ROUTES.DASHBOARD);
-          })
-        })
+            this.props.firebase.userMenu(authUser.user.uid)
+              .set({ drinks: 0, dishes: 0 })
+              .then(() => {
+                this.props.firebase.userOrders(authUser.user.uid)
+                  .set({ current: 0, past: 0 });
+                this.props.history.push(ROUTES.DASHBOARD);
+              });
+          });
       })
-      
-      .catch(error => {
+      .catch((error) => {
         this.setState({ error });
       });
 
-      this.setState({ ...INITIAL_STATE });
-      this.props.history.push(ROUTES.HOME);
-      event.preventDefault();
+    this.setState({ ...INITIAL_STATE });
+    this.props.history.push(ROUTES.HOME);
+    event.preventDefault();
   };
 
-  onChange = event => {
+  onChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
-  };
-
-  onChangeCheckbox = event => {
-    this.setState({ [event.target.name]: event.target.checked });
   };
 
   render() {
@@ -97,7 +91,7 @@ class SignUpFormBase extends Component {
       username,
       passwordOne,
       passwordTwo,
-      businessName
+      businessName,
     } = this.state;
 
     const isInvalid =
@@ -111,7 +105,7 @@ class SignUpFormBase extends Component {
       <div>
         <div>
           <div>
-            <h3>NAME</h3>
+            <h3>NOMBRE</h3>
             <input
               type="text"
               name="username"
@@ -120,7 +114,7 @@ class SignUpFormBase extends Component {
             />
           </div>
           <div>
-            <h3>E-MAIL</h3>
+            <h3>CORREO ELECTRÓNICO</h3>
             <input
               type="text"
               name="email"
@@ -131,7 +125,7 @@ class SignUpFormBase extends Component {
         </div>
         <div>
           <div>
-            <h3>PASSWORD</h3>
+            <h3>CONTRASEÑA</h3>
             <input
               type="password"
               name="passwordOne"
@@ -140,7 +134,7 @@ class SignUpFormBase extends Component {
             />
           </div>
           <div>
-            <h3>CONFIRM PASSWORD</h3>
+            <h3>CONFIRMAR CONTRASEÑA</h3>
             <input
               type="password"
               name="passwordTwo"
@@ -151,7 +145,7 @@ class SignUpFormBase extends Component {
         </div>
         <div>
           <div>
-            <h3>BUSINESS NAME</h3>
+            <h3>NOMBRE DEL NEGOCIO</h3>
             <input
               type="text"
               name="businessName"
@@ -160,11 +154,11 @@ class SignUpFormBase extends Component {
             />
           </div>
         </div>
-        <div 
+        <div
           onClick={isInvalid ? null : (e) => this.onSubmit(e)}
           className={isInvalid ? "btn btn_disabled" : "btn"}
-          >
-          CREATE ACCOUNT
+        >
+          CREAR CUENTA
         </div>
 
         {error && <p>{error.message}</p>}
@@ -175,7 +169,7 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = () => (
   <div>
-    Don't have an account? <Link to={ROUTES.SIGN_UP} style={{ color: 'black' }}>Sign Up</Link>
+    ¿No tienes una cuenta? <Link to={ROUTES.SIGN_UP} style={{ color: 'black' }}>Regístrate</Link>
   </div>
 );
 

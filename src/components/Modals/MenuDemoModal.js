@@ -8,13 +8,13 @@ export default class MenuDemoModal extends Component {
     return (
       <div className="demoMenuModal">
         <div>
-          <h3>READY TO ORDER?</h3>
-          <h3>Keep this tab open and switch to the previous opened tab to get an overview of the functions. When you are ready, switch back here.</h3>
+          <h3>¿LISTO PARA ORDENAR?</h3>
+          <h3>Mantén esta pestaña abierta y cambia a la pestaña previamente abierta para obtener una visión general de las funciones. Cuando estés listo, vuelve aquí.</h3>
           <p>
-            Users will see the menu of your restaurant through this screen. From here, they can add items, change quantities and place their order.
+            Los usuarios verán el menú de tu restaurante a través de esta pantalla. Desde aquí, pueden agregar artículos, cambiar cantidades y realizar su pedido.
           </p>
           <p>
-            Try resizing the window to mobile size or better yet, head to the dashboard on the other tab and scan a QR code from your own cellphone.
+            Intenta cambiar el tamaño de la ventana a tamaño móvil o, mejor aún, dirígete al panel de control en la otra pestaña y escanea un código QR desde tu propio celular.
           </p>
         </div>
         <div>
@@ -22,7 +22,7 @@ export default class MenuDemoModal extends Component {
             onClick={() => this.props.toggleModal()}
             className="btn"
             >
-            GOT IT!
+            ¡ENTENDIDO!
           </div>
         </div>
       </div>

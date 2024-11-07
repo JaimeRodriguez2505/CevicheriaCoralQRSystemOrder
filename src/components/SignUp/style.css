@@ -2,18 +2,21 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .signupView h3 {
-  font-size: 0.7rem;
-  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
 }
 
 .signupView > div:nth-child(4) {
   width: auto;
   height: 100%;
   display: flex;
-  align-self: center;
+  align-items: center;
   justify-content: center;
   margin-left: 6.8rem;
   padding-top: 5.3rem;
@@ -34,39 +37,62 @@
 }
 
 .signupView input {
-  width: 12rem;
+  width: 14rem;
   border: none;
   height: 1.8rem;
   margin-bottom: 1rem;
   font-size: 0.9rem;
-  border-radius: .3rem;
-  padding: 1rem 0.7rem;
+  border-radius: 0.3rem;
+  padding: 0.8rem 0.7rem;
   background: #F5F5F7;
 }
 
 .signupView .btn {
   width: 10rem;
   align-self: center;
+  margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .signupView {
+    height: auto;
+  }
+
+  .signupView > div:nth-child(4) {
+    margin-left: 0;
+    padding-top: 3rem;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .signupView {
     height: auto;
+    padding: 1rem;
+    justify-content: flex-start;
   }
 
   .signupView .mobileHeader {
     background: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 1.5rem 0;
   }
 
   .signupView .mobileHeader h3 {
+    font-size: 1.6rem;
     margin-bottom: 0;
   }
 
   .signupView > div:nth-child(4) {
     margin-left: 0;
-    padding-top: 0;
-    margin-top: 8.6rem;
-    padding-bottom: 6rem;
+    padding-top: 7rem;
+    margin-top: 0;
+    padding-bottom: 4rem;
   }
 
   .signupView > div:nth-child(4) > div {
@@ -77,5 +103,15 @@
 
   .signupView > div:nth-child(4) > div > div:first-of-type {
     margin-right: 0;
+  }
+
+  .signupView input {
+    width: 100%;
+    max-width: 18rem;
+  }
+
+  .signupView .btn {
+    width: 100%;
+    max-width: 10rem;
   }
 }

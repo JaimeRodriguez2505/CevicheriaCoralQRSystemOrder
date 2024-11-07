@@ -23,14 +23,14 @@ const MenuManagerView = ({
   return (
     <div className="viewSmall">
       <div className="dashboardHeader">
-        <h1>MENU</h1>
+        <h1>MENÚ</h1>
       </div>
       <div className="menuItemCardsView">
         <div>
-          {!drinksIsEmpty && <h3>DRINKS</h3>}
+          {!drinksIsEmpty && <h3>BEBIDAS</h3>}
           <div className="menuItemCards_items">
             {drinksIsEmpty ? 
-              <h3>NO REGISTERED DRINKS</h3>
+              <h3>BEBIDAS NO REGISTRADAS</h3>
             :
               <>
                 {menu.drinks && menu.drinks.map((el, idx) => 
@@ -49,10 +49,10 @@ const MenuManagerView = ({
           </div>
         </div>
         <div>
-          {!dishesIsEmpty && <h3>DISHES</h3>}
+          {!dishesIsEmpty && <h3>PLATOS</h3>}
           <div className="menuItemCards_items">  
             {dishesIsEmpty ?
-              <h3>NO REGISTERED DISHES</h3>
+              <h3>PLATOS NO REGISTRADOS</h3>
             :
               <>
                 {menu.dishes && menu.dishes.map((el, idx) => 

@@ -15,28 +15,28 @@ const OrdersSideboard = ({
       <div className="ordersSideboard_view">
         <div className="ordersSideboard_view_header">
           <div className="order_title">
-            {selectedOrder.orderNum !== undefined && <h3>ORDER #{selectedOrder.orderNum}</h3>}
-            <h3>{selectedOrder.table === "takeout" ? `TAKEOUT` : `TABLE ${selectedOrder.table}`}</h3>
+            {selectedOrder.orderNum !== undefined && <h3>PEDIDO #{selectedOrder.orderNum}</h3>}
+            <h3>{selectedOrder.table === "takeout" ? `PARA LLEVAR` : `MESA ${selectedOrder.table}`}</h3>
           </div>
           <div className="order_info">
-            <h3>Start</h3>
+            <h3>Inicio</h3>
             <h3 id="time">{getDate(selectedOrder.start).completeDate}</h3>
           </div>
           {selectedOrder.end && (
             <>
               <div className="order_info">
-                <h3>End</h3>
+                <h3>Fin</h3>
                 <h3 id="time">{getDate(selectedOrder.end).time}</h3>
               </div>
               <div className="order_info">
-                <h3>Duration</h3>
+                <h3>Duración</h3>
                 <h3 id="time">{getOrderTime(selectedOrder.start, selectedOrder.end)}</h3>
               </div>
             </>
           )}
           {selectedOrder.comments !== '' && (
             <div className="order_info">
-              <h3>Comments</h3>
+              <h3>Comentarios</h3>
               <h3 id="time">{selectedOrder.comments}</h3>
             </div>
           )}
@@ -44,7 +44,7 @@ const OrdersSideboard = ({
         <div className="ordersSideboard_view_items">
           {itemsAreValid(selectedOrder.dishes) && (
             <div className="order_items">
-              <h3>Dishes</h3>
+              <h3>Platos</h3>
               {selectedOrder.dishes.map((item, index) => (
                 <div className="item_dish" key={index}>
                   <h4>- {item.name}</h4>
@@ -55,7 +55,7 @@ const OrdersSideboard = ({
           )}
           {itemsAreValid(selectedOrder.drinks) && (
             <div className="order_items">
-              <h3>Drinks</h3>
+              <h3>Bebidas</h3>
               {selectedOrder.drinks.map((item, index) => (
                 <div className="item_dish" key={index}>
                   <h4>- {item.name}</h4>
@@ -77,13 +77,13 @@ const OrdersSideboard = ({
               className="btn"
               onClick={() => orderReady(selectedOrder.index)} 
             >
-              ORDER DONE
+              PEDIDO COMPLETADO
             </div>
             <div 
               className="btn btn_secondary"
               onClick={() => deleteOrder(selectedOrder.index, 'current')} 
             >
-              DELETE
+              ELIMINAR
             </div>
           </>
         ):(
@@ -92,13 +92,13 @@ const OrdersSideboard = ({
               className="btn"
               onClick={() => resetOrder(selectedOrder.index)} 
             >
-              RESET
+              REINICIAR
             </div>
             <div 
               className="btn btn_secondary"
               onClick={() => deleteOrder(selectedOrder.index, 'past')} 
             >
-              DELETE
+              ELIMINAR
             </div>
           </>
         )}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 import MenuManagerView from './menuManagerView';
+import { withFirebase } from '../Firebase';
 
 class MenuManager extends Component {
   constructor(props) {
@@ -64,7 +65,7 @@ class MenuManager extends Component {
   addItem = (event) => {
     event.preventDefault();
     if(this.itemIsDuplicate(this.state.inputItem)) {
-      this.setState({ error: "Item is duplicate" });
+      this.setState({ error: "El ítem es duplicado" });
     } else {
       let newItem = { 
         name: this.state.inputItem.name, 
@@ -100,7 +101,7 @@ class MenuManager extends Component {
   saveEditItem = (event, idx) => {
     event.preventDefault();
     if(this.itemIsDuplicate(this.state.itemEdit, idx)) {
-      this.setState({ error: "Item is duplicate" });
+      this.setState({ error: "El ítem es duplicado" });
     } else {
       let newItem = { 
         name: this.state.itemEdit.name, 

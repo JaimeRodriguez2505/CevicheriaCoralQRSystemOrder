@@ -2,6 +2,9 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
 .signInView > div:nth-child(4) {
@@ -9,10 +12,10 @@
   height: 100%;
   display: flex;
   align-self: center;
-  margin-left: 6.8rem;
   padding-top: 5.3rem;
   flex-direction: column;
   justify-content: center;
+  margin-left: 6.8rem;
 }
 
 .signInView > div:last-of-type > div:nth-child(2),
@@ -27,21 +30,25 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
+  max-width: 20rem;
 }
 
 .signInForm input {
-  width: 12rem;
+  width: 100%;
+  max-width: 18rem;
   border: none;
   height: 1.8rem;
   font-size: 0.9rem;
   margin-bottom: 1rem;
-  border-radius: .3rem;
+  border-radius: 0.3rem;
   padding: 1rem 0.7rem;
   background: #F5F5F7;
 }
 
 .signInForm .btn {
-  width: 10rem;
+  width: 100%;
+  max-width: 10rem;
   margin-bottom: 2rem;
 }
 
@@ -55,21 +62,44 @@
   display: none;
 }
 
+@media screen and (max-width: 768px) {
+  /* Ajustes para pantallas medianas */
+  .signInView > div:nth-child(4) {
+    margin-left: 0;
+    padding-top: 3rem;
+  }
+}
+
 @media screen and (max-width: 480px) {
+  /* Ajustes para pantallas móviles pequeñas */
   #backBtn {
-    top: 0;
-    left: 0;
     display: block;
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 2;
     padding: 1.65rem;
   }
 
-  .signInView > div:last-of-type {
+  .signInView {
+    padding: 1rem;
+    justify-content: flex-start;
+  }
+
+  .signInView > div:nth-child(4) {
     margin-left: 0;
-    padding-top: 0;
-    padding-top: 7rem;
-  }  
+    padding-top: 6rem;
+  }
+
+  .signInForm input {
+    font-size: 0.85rem;
+    padding: 0.8rem 0.6rem;
+  }
+
+  .signInForm .btn {
+    max-width: 100%;
+    width: 100%;
+  }
 
   .mobileHeader {
     top: 0;
@@ -86,5 +116,11 @@
 
   .mobileHeader > h3:first-of-type {
     font-size: 1.8rem;
+  }
+
+  .signInView p {
+    font-size: 0.85rem;
+    margin-bottom: 0.8rem;
+    text-align: center;
   }
 }

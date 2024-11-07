@@ -95,7 +95,7 @@ class OrdersManager extends Component {
     let tableNum = past[index].table;
     let numIsInCurrent = current.find(el => el.table === tableNum) === undefined ? false : true;
 
-    // check if selected order number is in current tables
+    // verificar si el número de mesa seleccionado está en las mesas actuales
     if(!numIsInCurrent || tableNum === "takeout") {
       selectedOrder.ready = false;
       selectedOrder.end = null;
@@ -136,7 +136,7 @@ class OrdersManager extends Component {
   getOrderTime = (start, end) => {
     let minutes = ((end-start)/1000)/60;
     minutes = Math.round(Math.round(minutes * 100) / 100);
-    return `${minutes} ${minutes < 10 ? 'minute':'minutes'}`;
+    return `${minutes} ${minutes < 10 ? 'minuto':'minutos'}`;
   }
 
   deleteOrder = (index, type) => {
@@ -170,7 +170,6 @@ class OrdersManager extends Component {
         getTimeDate={this.getTimeDate}
         deleteOrder={this.deleteOrder}
         getOrderTime={this.getOrderTime}
-        pastOrdersValid={pastOrdersValid}
         itemsAreValid={this.itemsAreValid}
         viewCurrent={this.state.viewCurrent}
         currentOrdersValid={currentOrdersValid}

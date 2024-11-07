@@ -38,32 +38,32 @@ const MenuView = ({
 }) => (
   <div className="menuView" id={orderSent && "noMargin"}>
     <div className="dashboardHeader">
-      <h1>MENU</h1>
+      <h1>MENÚ</h1>
       <h3>{businessName}</h3>
     </div>
 
     {!orderSent && (
       <div className="menuHeader" id={confirmScreen && "menuHeaderConfirm"}>
-        <h3>{confirmScreen ? "YOUR ORDER" : "MENU"}</h3>
+        <h3>{confirmScreen ? "TU PEDIDO" : "MENÚ"}</h3>
         {!confirmScreen && <h3>{businessName}</h3>}
       </div>
     )}
 
     <div className="menuContainer">
-      {/* Fetching Data Screen */}
+      {/* Pantalla de Obtención de Datos */}
       {!dataFetched && 
         <div id="fetchingData">
-          <h3>FETCHING DATA...</h3>
+          <h3>OBTENIENDO DATOS...</h3>
         </div>
       }
-      {/* Fetching Data Screen End */}
-      {/* Main Screen */}
+      {/* Fin de Pantalla de Obtención de Datos */}
+      {/* Pantalla Principal */}
       {(!orderSent && !confirmScreen) && (
         <div className="client_menuItems">
           <div>
             {!drinksIsEmpty && ( 
               <>
-              <h4>DRINKS</h4> 
+              <h4>BEBIDAS</h4> 
               {drinks && drinks.map((item, idx) =>
                 <ClientMenuItemCard 
                   key={idx}
@@ -86,7 +86,7 @@ const MenuView = ({
           <div>
             {!dishesIsEmpty && (           
               <>
-              <h4>DISHES</h4>
+              <h4>PLATOS</h4>
               {dishes && dishes.map((item, idx) =>    
                 <ClientMenuItemCard 
                   key={idx}
@@ -108,30 +108,30 @@ const MenuView = ({
           </div>
         </div>
       )}
-      {/* Main Screen End */}
-      {/* Order Success Screen */}
+      {/* Fin de Pantalla Principal */}
+      {/* Pantalla de Éxito del Pedido */}
       {orderSent && (
         <div className="orderSent">
           <div>
-            <h3>SUCCESS!</h3>
-            <h4>YOUR ORDER HAS BEEN SENT</h4>
+            <h3>¡ÉXITO!</h3>
+            <h4>TU PEDIDO HA SIDO ENVIADO</h4>
           </div>
           <div>
             <h4>TOTAL: ${order.cost}</h4>
           </div>
         </div>
       )}
-      {/* Order Success Screen End */}
-      {/* Error Screen */}
+      {/* Fin de Pantalla de Éxito del Pedido */}
+      {/* Pantalla de Error */}
       {error && 
         <div id="menuView_error">
           <FontAwesomeIcon icon={faExclamationTriangle} size="4x"/>
           <h3>{error}</h3>
-          <h3>PLEASE TRY AGAIN</h3>
+          <h3>POR FAVOR, INTENTA DE NUEVO</h3>
         </div>
       }
-      {/* Error Screen End */}
-      {/* Confirm Screen */}
+      {/* Fin de Pantalla de Error */}
+      {/* Pantalla de Confirmación */}
       {(confirmScreen && !orderSent) && (
         <OrderConfirmScreen 
           order={order}
@@ -142,7 +142,7 @@ const MenuView = ({
           orderDishesIsEmpty={orderDishesIsEmpty}
         />
       )}
-      {/* Confirm Screen End */}
+      {/* Fin de Pantalla de Confirmación */}
       {!orderSent && (
         <div className="bottomNav" id={confirmScreen && "bottomNavConfirm"}>
           <div>
@@ -153,16 +153,16 @@ const MenuView = ({
             onClick={confirmScreen ? () => sendOrder() : () => toggleConfirmScreen()}
             className={orderIsEmpty ? "btn btn_disabled" : "btn"}
           >
-            {confirmScreen ? "CONFIRM" : "ORDER"}
+            {confirmScreen ? "CONFIRMAR" : "PEDIR"}
           </div>
         </div>
       )}
     </div>
-    {/* Demo Modal */}
+    {/* Modal de Demostración */}
     <Modal show={showModal}>
       <MenuDemoModal toggleModal={toggleModal} />
     </Modal>
-    {/* Demo Modal End */}
+    {/* Fin de Modal de Demostración */}
   </div>
 );
 

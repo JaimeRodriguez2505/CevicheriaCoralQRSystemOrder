@@ -9,55 +9,55 @@ export default class DashboardDemoModal extends Component {
           <div></div>
 
           <div className="demoModal_header">
-            <h3>WELCOME TO DASH TABS!</h3>
-            <h3>The dashboard is the core of dash tab's functionality and its split into three sections</h3>
+            <h3>¡BIENVENIDO A DASH TABS!</h3>
+            <h3>El panel de control es el núcleo de la funcionalidad de Dash Tabs y está dividido en tres secciones</h3>
           </div>
           <div>
             <div className="demoModal_infoColumn">
-              <h4>ORDERS</h4>
+              <h4>ÓRDENES</h4>
               <div>
                 <div>
-                  See orders in real time.
+                  Ver órdenes en tiempo real.
                 </div>
                 <div>
-                  Browse through past orders.
+                  Navegar a través de órdenes pasadas.
                 </div>
                 <div>
-                  Check order info including items, total cost and the time the order was placed.
+                  Revisar información de la orden incluyendo artículos, costo total y la hora en que se realizó la orden.
                 </div>
               </div>
             </div>
             <div className="demoModal_infoColumn">
-              <h4>TABLES</h4>
+              <h4>MESAS</h4>
               <div>
                 <div>
-                  Add tables.
+                  Agregar mesas.
                 </div>
                 <div>
-                  Generate and print individual QR code for each table.
+                  Generar e imprimir códigos QR individuales para cada mesa.
                 </div>
               </div>
             </div>
             <div className="demoModal_infoColumn">
-              <h4>MENU</h4>
+              <h4>MENÚ</h4>
               <div>
                 <div>
-                  Input menu items with price, description and availability.
+                  Ingresar artículos del menú con precio, descripción y disponibilidad.
                 </div>
                 <div>
-                  Changes in the menu will be reflected in business menu page.
+                  Los cambios en el menú se reflejarán en la página del menú del negocio.
                 </div>
               </div>
             </div>
           </div>
-          <h3>Try to place an order through the menu that opened in another tab. Then check the order in the dashboard.</h3>
+          <h3>Intenta realizar una orden a través del menú que se abrió en otra pestaña. Luego verifica la orden en el panel de control.</h3>
         </div>
         <div>
           <div
             onClick={() => this.props.toggleModal()}
             className="btn"
             >
-            LET ME TRY!
+            ¡DÉJAME PROBAR!
           </div>
         </div>
       </div>

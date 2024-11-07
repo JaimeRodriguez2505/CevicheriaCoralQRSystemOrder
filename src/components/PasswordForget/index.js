@@ -15,10 +15,10 @@ const PasswordForgetPage = () => (
       </Link>
     </div>
     <div className="mobileHeader">
-      <h3>RESET PW</h3>
+      <h3>REINICIAR PW</h3>
     </div>
     <div className="dashboardHeader">
-      <h1>RESET PASSWORD</h1>
+      <h1>REINICIAR CONTRASEÑA</h1>
     </div>
     <PasswordForgetForm />
   </div>
@@ -58,20 +58,20 @@ class PasswordForgetFormBase extends Component {
     return (
       <div>
         <div>
-          Type your registered e-mail to get a new password
+          Escribe tu correo electrónico registrado para obtener una nueva contraseña
         </div>
         <input
           type="text"
           name="email"
           value={this.state.email}
           onChange={this.onChange}
-          placeholder="Email Address"
+          placeholder="Dirección de Correo Electrónico"
         />
         <div 
           onClick={isInvalid ? null : (e) => this.onSubmit(e)}
           className={isInvalid ? "btn btn_disabled" : "btn"}
           >
-          RESET PASSWORD
+          REINICIAR CONTRASEÑA
         </div>
         {error && <p>{error.message}</p>}
       </div>
@@ -81,7 +81,7 @@ class PasswordForgetFormBase extends Component {
 
 const PasswordForgetLink = () => (
   <div>
-    <Link to={ROUTES.PASSWORD_FORGET} style={{ color: 'black' }}>Forgot Password?</Link>
+    <Link to={ROUTES.PASSWORD_FORGET} style={{ color: 'black' }}>¿Olvidaste tu contraseña?</Link>
   </div>
 );
 

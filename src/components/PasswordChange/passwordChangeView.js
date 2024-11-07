@@ -9,27 +9,27 @@ const PasswordChangeView = ({
   passwordTwo,
 }) => (
   <div>
-    <h3>UPDATE PASSWORD</h3>
+    <h3>ACTUALIZAR CONTRASEÑA</h3>
     <div>
       <input
         type="password"
         name="passwordOne"
         value={passwordOne}
         onChange={onChange}
-        placeholder="New Password"
+        placeholder="Nueva Contraseña"
       />
       <input
         type="password"
         name="passwordTwo"
         value={passwordTwo}
         onChange={onChange}
-        placeholder="Confirm New Password"
+        placeholder="Confirmar Nueva Contraseña"
       />
       <div 
         className={isInvalid ? "btn btn_disabled" : "btn btn_secondary"}
         onClick={isInvalid ? null : (e) => onSubmit(e)}
         >
-        RESET
+        REINICIAR
       </div>
     </div>
     {error && <p>{error.message}</p>}

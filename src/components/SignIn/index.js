@@ -16,10 +16,8 @@ const SignInPage = () => {
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      setShowModal(true);
-     };
-  })
+    
+  }, []);
 
   return (
     <div className="signInView">
@@ -29,11 +27,11 @@ const SignInPage = () => {
         </Link>
       </div>
       <div className="mobileHeader">
-        <h3>SIGN IN</h3>
+        <h3>INICIAR SESIÓN</h3>
       </div>
 
       <div className="dashboardHeader">
-        <h1>SIGN IN</h1>
+        <h1>INICIAR SESIÓN</h1>
       </div>
       <div>
         <SignInForm />
@@ -91,20 +89,20 @@ class SignInFormBase extends Component {
           name="email"
           value={email}
           onChange={this.onChange}
-          placeholder="Email Address"
+          placeholder="Dirección de Correo Electrónico"
         />
         <input
           name="password"
           type="password"
           value={password}
-          placeholder="Password"
+          placeholder="Contraseña"
           onChange={this.onChange}
         />
         <div 
           onClick={isInvalid ? null : (e) => this.onSubmit(e)}
           className={isInvalid ? "btn btn_disabled" : "btn"}
           >
-          SIGN IN
+          INICIAR SESIÓN
         </div>
         {error && <p>{error.message}</p>}
       </div>

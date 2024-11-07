@@ -17,7 +17,7 @@ const HomeView = ({ launchDemo, signUpRoute, signInRoute }) => (
   <div className="homeView">
     <div className="mobileHomeHeader">
       <div className="btn">
-        <Link style={{ textDecoration: 'none', color: 'white' }} to={signInRoute}>SIGN IN</Link>
+        <Link style={{ textDecoration: 'none', color: 'white' }} to={signInRoute}>INICIAR SESIÓN</Link>
       </div>
     </div>
     <div className="introRow">
@@ -25,22 +25,22 @@ const HomeView = ({ launchDemo, signUpRoute, signInRoute }) => (
         <FontAwesomeIcon icon={faReceipt} size="9x"/>
       </div>
       <div>
-        <h1>WELCOME TO DASHTABS.</h1>
-        <p>Optimized order management for the food business industry.</p>
-        <div className="btn" onClick={() => launchDemo()}>TRY IT NOW!</div>
+        <h1>BIENVENIDO A DASHTABS.</h1>
+        <p>Gestión de pedidos optimizada para la industria de alimentos.</p>
+        <div className="btn" onClick={() => launchDemo()}>¡PRUÉBALO AHORA!</div>
       </div>
     </div>
     <div className="firstRow">
       <div>
         <div id="rowText">
           <p>
-            Generate your own QR codes.
+            Genera tus propios códigos QR.
           </p>
           <p>
-            Users scan the code and get an interactive version of your menu.
+            Los usuarios escanean el código y obtienen una versión interactiva de tu menú.
           </p>
           <p>
-            They input their items directly and send the order through the interactive interface.
+            Ingresan sus artículos directamente y envían el pedido a través de la interfaz interactiva.
           </p>
         </div>
       </div>
@@ -58,13 +58,13 @@ const HomeView = ({ launchDemo, signUpRoute, signInRoute }) => (
       <div>
         <div id="rowText">
           <p>
-            Keep track of orders in real time.
+            Mantén el seguimiento de los pedidos en tiempo real.
           </p>
           <p>
-            Browse through past orders.
+            Navega a través de pedidos anteriores.
           </p>
           <p>
-            See essential order info, items, total cost and time the order was placed.
+            Consulta información esencial del pedido, artículos, costo total y la hora en que se realizó el pedido.
           </p>
         </div>
       </div>
@@ -73,31 +73,31 @@ const HomeView = ({ launchDemo, signUpRoute, signInRoute }) => (
       <div>
         <FontAwesomeIcon icon={faUserFriends} size="5x"/>
         <p>
-          No physical menus and less waiting staff.
+          Sin menús físicos y menos personal de espera.
         </p>
       </div>
       <div>
         <FontAwesomeIcon icon={faChartBar} size="5x" />
         <p>
-          Track the completion time for every order.
+          Rastrea el tiempo de finalización de cada pedido.
         </p>
       </div>
       <div>
         <FontAwesomeIcon icon={faHamburger} size="5x" />
         <p>
-          Changes in menu? Update in real time.
+          ¿Cambios en el menú? Actualiza en tiempo real.
         </p>
       </div>
     </div>
     <div className="lastRow">
-      <div className="btn" onClick={() => launchDemo()}>TRY IT NOW!</div>
-      <p>or</p>
+      <div className="btn" onClick={() => launchDemo()}>¡PRUÉBALO AHORA!</div>
+      <p>o</p>
       <div className="btn">
         <Link 
           style={{ textDecoration: 'none', color: 'white' }}
           to={signUpRoute}
         >
-            CREATE ACCOUNT
+            CREAR CUENTA
           </Link>
       </div>
     </div>

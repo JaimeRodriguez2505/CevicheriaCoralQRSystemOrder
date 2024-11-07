@@ -103,7 +103,7 @@ class TablesManager extends Component {
   saveEditTable = (e) => {
     e.preventDefault();
     if(this.tableIsDuplicate(this.state.tableEdit.newNumber*1, this.state.tableEdit.current)) {
-      let newError = { ...this.state.error, msg: 'TABLE NUMBER IS DUPLICATE, PLEASE TRY ANOTHER NUMBER' };
+      let newError = { ...this.state.error, msg: 'EL NÚMERO DE MESA ES DUPLICADO, POR FAVOR INTENTA CON OTRO NÚMERO' };
       this.setState({ error: newError });
     } else {
       let newTables = [...this.state.tables]
@@ -129,7 +129,7 @@ class TablesManager extends Component {
   addTable = (e) => {
     e.preventDefault();
     if(this.tableIsDuplicate(this.state.inputTable.number*1)) {
-      let newError = { ...this.state.error, msg: 'TABLE NUMBER IS DUPLICATE, PLEASE TRY ANOTHER NUMBER' };
+      let newError = { ...this.state.error, msg: 'EL NÚMERO DE MESA ES DUPLICADO, POR FAVOR INTENTA CON OTRO NÚMERO' };
       this.setState({ error: newError });
     } else {
       if(!this.state.tables) {

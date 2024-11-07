@@ -17,10 +17,10 @@ const MenuSideboard = ({
       {(itemEdit.name === '' && itemEdit.idx === '') && (
         <>
           <div className="menuSideboard_view">
-            <h3>ADD NEW ITEM</h3>
+            <h3>AGREGAR NUEVO ÍTEM</h3>
             <div className="menuSideboard_addItemForm">
               <div className="inputGroup">
-                <h4>Name</h4>
+                <h4>Nombre</h4>
                 <input 
                   name="name"
                   type="text"
@@ -29,7 +29,7 @@ const MenuSideboard = ({
                 />
               </div>
               <div className="inputGroup">
-                <h4>Cost</h4>
+                <h4>Costo</h4>
                 <div>
                   <h4>$</h4>
                   <input 
@@ -41,7 +41,7 @@ const MenuSideboard = ({
                 </div>
               </div>
               <div className="inputGroup">
-                <h4>Description</h4>
+                <h4>Descripción</h4>
                 <textarea 
                   rows="3" 
                   cols="50" 
@@ -52,9 +52,9 @@ const MenuSideboard = ({
                 />
               </div>
               <div className="inputGroup">
-                <h4>Type</h4>
+                <h4>Tipo</h4>
                 <div>
-                  <div>Drink</div>
+                  <div>Bebida</div>
                   <input 
                     name="type" 
                     type="radio" 
@@ -64,7 +64,7 @@ const MenuSideboard = ({
                     />
                 </div>
                 <div>
-                  <div>Dish</div>
+                  <div>Plato</div>
                   <input 
                     name="type" 
                     type="radio" 
@@ -81,7 +81,7 @@ const MenuSideboard = ({
               onClick={addIsInvalid ? null : addItem}
               className={addIsInvalid ? "btn btn_disabled" : "btn"}
               >
-                ADD ITEM
+                AGREGAR ÍTEM
               </div>
           </div>
         </>
@@ -89,10 +89,10 @@ const MenuSideboard = ({
       {itemEdit.idx !== '' && (
         <>
           <div className="menuSideboard_view">
-            <h3>EDITING ITEM</h3>
+            <h3>EDITANDO ÍTEM</h3>
             <div className="menuSideboard_editItemForm">
               <div className="inputGroup">
-                <h4>Name</h4>
+                <h4>Nombre</h4>
                 <input 
                   type="text"
                   name="name"
@@ -101,7 +101,7 @@ const MenuSideboard = ({
                   />
               </div>
               <div className="inputGroup">
-                <h4>Cost</h4>
+                <h4>Costo</h4>
                 <div>
                   <h4>$</h4>
                   <input 
@@ -113,7 +113,7 @@ const MenuSideboard = ({
                 </div>
               </div>
               <div className="inputGroup">
-                <h4>Description</h4>
+                <h4>Descripción</h4>
                 <textarea 
                   rows="3" 
                   cols="50" 
@@ -124,9 +124,9 @@ const MenuSideboard = ({
                 />
               </div>
               <div className="inputGroup">
-                <h4>Available</h4>
+                <h4>Disponible</h4>
                 <div>
-                  <div>Yes</div>
+                  <div>Sí</div>
                   <input 
                     type="radio" 
                     value={true} 
@@ -153,19 +153,19 @@ const MenuSideboard = ({
               onClick={isInvalidEdit ? null : (e) => saveEditItem(e, itemEdit.idx)}
               className={isInvalidEdit ? "btn btn_disabled" : "btn"}
             >
-              SAVE
+              GUARDAR
             </div>
             <div
               onClick={() => deleteItem(itemEdit.idx, itemEdit.type)}
               className="btn btn_secondary"
             >
-              DELETE
+              ELIMINAR
             </div>
             <div
               onClick={cancelEdit}
               className="btn btn_secondary"
             >
-              CANCEL
+              CANCELAR
             </div>
           </div>
         </>

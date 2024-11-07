@@ -39,7 +39,7 @@ const OrderCard = ({
       {cardType() === 'currentOrder' && (
         <>
           <div>
-            <h3>{el.table === "takeout" ? "TAKEOUT" : `TABLE ${el.table}`}</h3>
+            <h3>{el.table === "takeout" ? "PARA LLEVAR" : `MESA ${el.table}`}</h3>
             { el.table === "takeout" && <h3>#{el.orderNum}</h3> }
           </div>
           <h3 id="time">{getTimeDate(el.start)}</h3>
@@ -49,7 +49,7 @@ const OrderCard = ({
         <div>
           <div className="highlightCard_header">
             <div>
-              <h3>{el.table === "takeout" ? "TAKEOUT" : `TABLE ${el.table}`}</h3>
+              <h3>{el.table === "takeout" ? "PARA LLEVAR" : `MESA ${el.table}`}</h3>
               { el.table === "takeout" && <h3>#{el.orderNum}</h3> }
             </div>
             <h3 id="time">{getTimeDate(el.start)}</h3>
@@ -57,7 +57,7 @@ const OrderCard = ({
           <div className="highlightCard_items">
             {itemsAreValid(el.items.dishes) && (
               <div>
-                <h3>Dishes</h3>
+                <h3>Platos</h3>
                 {el.items.dishes.map((item, index) => (
                   <div className="item_dish" key={index}>
                     <h4>- {item.name}</h4>
@@ -68,7 +68,7 @@ const OrderCard = ({
             )}
             {itemsAreValid(el.items.drinks) && (
               <div>
-                <h3>Drinks</h3>
+                <h3>Bebidas</h3>
                 {el.items.drinks.map((item, index) => (
                   <div className="item_drink" key={index}>
                     <h4>- {item.name}</h4>
@@ -83,16 +83,16 @@ const OrderCard = ({
       {cardType() === 'pastOrder' && (
         <>
           <div className="pastOrder_header">
-            <h3>{el.table === "takeout" ? "TAKEOUT" : `TABLE ${el.table}`}</h3>
+            <h3>{el.table === "takeout" ? "PARA LLEVAR" : `MESA ${el.table}`}</h3>
             { el.table === "takeout" && <h3>#{el.orderNum}</h3> }
           </div>
           <div>
             <div className="pastOrder_time">
-              <h3>Start</h3>
+              <h3>Inicio</h3>
               <h3 id="time">{getTimeDate(el.start)}</h3>
             </div>
             <div className="pastOrder_time">
-              <h3>End</h3>
+              <h3>Fin</h3>
               <h3 id="time">{getTimeDate(el.end)}</h3>
             </div>
           </div>

@@ -60,7 +60,7 @@ const NavigationAuth = ({ authUser, displayingMenu, history }) => {
                 onClick={() => toggleToOrders()}
                 id={state.view !== 'orders' && "inactiveLink"}
               >
-                ORDERS
+                ÓRDENES
               </p>
               <span id={state.view === 'orders' && 'navDash'}></span>
             </div>
@@ -69,7 +69,7 @@ const NavigationAuth = ({ authUser, displayingMenu, history }) => {
                 onClick={() => toggleView('tables')} 
                 id={state.view !== 'tables' && 'inactiveLink'}
               >
-                TABLES
+                MESAS
               </p>
               <span id={state.view === 'tables' && 'navDash'}></span>
             </div>
@@ -78,7 +78,7 @@ const NavigationAuth = ({ authUser, displayingMenu, history }) => {
                 onClick={() => toggleView('menu')} 
                 id={state.view !== 'menu' && 'inactiveLink'}
               >
-                MENU
+                MENÚ
               </p>
               <span id={state.view === 'menu' && 'navDash'}></span>
             </div>
@@ -86,14 +86,14 @@ const NavigationAuth = ({ authUser, displayingMenu, history }) => {
         )}
       </div>
       <div className="navLinks bottomNav">
-        {!displayingMenu && <Link style={{ textDecoration: 'none', color: 'white' }} to={ROUTES.DASHBOARD}>DASHBOARD</Link>}
+        {!displayingMenu && <Link style={{ textDecoration: 'none', color: 'white' }} to={ROUTES.DASHBOARD}>PANEL DE CONTROL</Link>}
         {(!authUser.isAnonymous && !displayingMenu) && 
           <Link 
             to={ROUTES.ACCOUNT}
             onClick={() => toggleView('orders')}
             style={{ textDecoration: 'none', color: 'white' }} 
             >
-              ACCOUNT
+              CUENTA
             </Link>
         }
         {!displayingMenu && <SignOutButton userIsAnonymous={authUser.isAnonymous} history={history} />}
@@ -109,7 +109,7 @@ const NavigationNonAuth = ({ displayingMenu }) => (
       <Link style={{ textDecoration: 'none', color: 'white' }} to={ROUTES.HOME}>DASH-TABS</Link>
     </div>
     <div className="navLinks bottomNav">
-      {!displayingMenu && <Link style={{ textDecoration: 'none', color: 'white' }} to={ROUTES.SIGN_IN}>SIGN IN</Link>}
+      {!displayingMenu && <Link style={{ textDecoration: 'none', color: 'white' }} to={ROUTES.SIGN_IN}>INICIAR SESIÓN</Link>}
     </div>
   </div>
 );

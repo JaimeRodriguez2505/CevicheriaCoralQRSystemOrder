@@ -8,10 +8,10 @@ const MobileModal = (props) => (
     <div className="demoModal_content">
       <div id="mobileModal">
         <p>
-          The dashboard is currently not optimized for mobile usage.
+          El panel de control actualmente no está optimizado para uso móvil.
         </p>
         <p>
-          Please switch to a desktop computer to get the best experience.
+          Por favor, cambia a una computadora de escritorio para obtener la mejor experiencia.
         </p>
       </div>
     </div>
@@ -20,7 +20,7 @@ const MobileModal = (props) => (
         onClick={() => props.history.push(ROUTES.HOME)}
         className="btn"
         >
-        GO BACK
+        VOLVER
       </div>
     </div>
   </div>

@@ -18,38 +18,38 @@ const TablesSideboard = ({
 }) => {
   return (
     <div className="tablesSideboard">
-      {/* Menu */}
+      {/* Menú */}
       {sideboardView === "menu" && (
         <div className="tablesSideboard_view main">
           <div 
             className="btn"
             onClick={() => toggleAddTableForm("open")}
             >
-            ADD TABLE
+            AGREGAR MESA
           </div>
           <div>
             <div 
               onClick={() => toggleModal("tables")} 
               className="btn btn_secondary"
             >
-              GET TABLES QR CODES
+              OBTENER CÓDIGOS QR DE MESAS
             </div>
             <div 
               className="btn btn_secondary"
               onClick={() => toggleModal("takeout")}
             >
-              GET TAKEOUT QR CODE
+              OBTENER CÓDIGO QR PARA LLEVAR
             </div>
           </div>
         </div>
       )}
-      {/* Add Table Form */}
+      {/* Formulario para Agregar Mesa */}
       {sideboardView === "addTable" && (
         <>
           <div className="tablesSideboard_view">
-            <h3>ADD NEW TABLE</h3>
+            <h3>AGREGAR NUEVA MESA</h3>
             <div className="inputGroup">
-              <h4>Table Number</h4>
+              <h4>Número de Mesa</h4>
               <input 
                 type="number"
                 value={inputTable.number}
@@ -57,7 +57,7 @@ const TablesSideboard = ({
               />
             </div>
             <div className="inputGroup">
-              <h4>Description</h4>
+              <h4>Descripción</h4>
               <textarea 
                 rows="3"
                 cols="50"
@@ -72,24 +72,24 @@ const TablesSideboard = ({
               onClick={inputIsInvalid ? null : (e) => addTable(e)}
               className={inputIsInvalid ? "btn btn_disabled" : "btn"}
             >
-              ADD
+              AGREGAR
             </div>
             <div 
               className="btn btn_secondary"
               onClick={() => cancelAddTable()}
             >
-              CANCEL
+              CANCELAR
             </div>
           </div>
         </>
       )}
-      {/* Edit Table Form */}
+      {/* Formulario para Editar Mesa */}
       {sideboardView === "editTable" && (
         <>
           <div className="tablesSideboard_view">
-            <h3>EDITING TABLE</h3>
+            <h3>EDITANDO MESA</h3>
             <div className="inputGroup">
-              <h4>Table Number</h4>
+              <h4>Número de Mesa</h4>
               <input 
                 type="number"
                 value={tableEdit.newNumber}
@@ -97,7 +97,7 @@ const TablesSideboard = ({
               />
             </div>
             <div className="inputGroup">
-              <h4>Description</h4>
+              <h4>Descripción</h4>
               <textarea 
                 rows="3"
                 cols="50"
@@ -111,7 +111,7 @@ const TablesSideboard = ({
               id="showQr"
               onClick={editIsInvalid ? null : () => toggleModal(tableEdit.newNumber)}
             >
-              SHOW QR
+              MOSTRAR QR
             </div>
           </div>
           <div className="menuSideboard_actionButtons">
@@ -119,19 +119,19 @@ const TablesSideboard = ({
                 className={editIsInvalid ? "btn btn_disabled" : "btn"}
                 onClick={editIsInvalid ? null : (e) => saveEditTable(e)}
               >
-                SAVE
+                GUARDAR
               </div>
               <div 
                 className="btn btn_secondary"
                 onClick={() => deleteTable(tableEdit.current)}
               >
-                DELETE
+                ELIMINAR
               </div>
               <div 
                 className="btn btn_secondary"
                 onClick={() => cancelTableEdit()}
               >
-                CANCEL
+                CANCELAR
               </div>
           </div>
         </>
